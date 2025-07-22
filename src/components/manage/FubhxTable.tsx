@@ -6,7 +6,7 @@ import TableView from './views/TableView';
 import GridView from './views/GridView';
 import ListView from './views/ListView';
 import KanbanView from './views/KanbanView';
-import { cortexItems } from './cortex-data';
+import { fubhxItems } from './fubhx-data';
 import { 
   Dialog, 
   DialogContent, 
@@ -23,19 +23,19 @@ import {
 } from '@/components/ui/select';
 import { toast } from 'sonner';
 
-interface CortexTableProps {
+interface FubhxTableProps {
   viewType?: 'table' | 'grid' | 'list' | 'kanban';
   categoryId?: string;
-  cortexId?: string | null;
+  fubhxId?: string | null;
 }
 
-const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'overview' }: CortexTableProps) => {
+const FubhxTable = ({ viewType = 'table', categoryId = 'private', fubhxId = 'overview' }: FubhxTableProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedItems, setSelectedItems] = useState<string[]>([]);
   const [moveDialogOpen, setMoveDialogOpen] = useState(false);
-  const [targetCortex, setTargetCortex] = useState<string>('');
+  const [targetFubhx, setTargetFubhx] = useState<string>('');
   
-  const getActiveCortexName = () => {
+  const getActiveFubhxName = () => {
     const categories = [
       {
         id: 'shared',
@@ -64,48 +64,48 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
       }
     ];
     
-    if (cortexId === null) {
+    if (fubhxId === null) {
       return "All";
     }
     
     const category = categories.find(c => c.id === categoryId);
     if (!category) return "Unknown";
     
-    const item = category.items.find(i => i.id === cortexId);
+    const item = category.items.find(i => i.id === fubhxId);
     return item ? item.name : "Unknown";
   };
   
   const getFilteredItems = () => {
-    const activeCortexName = getActiveCortexName().toLowerCase();
+    const activeFubhxName = getActiveFubhxName().toLowerCase();
     
-    if (cortexId === 'overview') {
+    if (fubhxId === 'overview') {
       return searchQuery 
-        ? cortexItems.filter(item => 
+        ? fubhxItems.filter(item => 
             item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
             item.keywords.some(keyword => keyword.toLowerCase().includes(searchQuery.toLowerCase())) ||
             item.writer.toLowerCase().includes(searchQuery.toLowerCase())
           )
-        : cortexItems;
+        : fubhxItems;
     }
     
-    let cortexFiltered = cortexItems.filter(item => 
-      item.keywords.some(keyword => keyword.toLowerCase() === activeCortexName.toLowerCase())
+    let fubhxFiltered = fubhxItems.filter(item => 
+      item.keywords.some(keyword => keyword.toLowerCase() === activeFubhxName.toLowerCase())
     );
     
-    if (cortexFiltered.length === 0) {
-      cortexFiltered = cortexItems.filter(item => 
-        item.keywords.some(keyword => keyword.toLowerCase().includes(activeCortexName.toLowerCase())) ||
-        item.title.toLowerCase().includes(activeCortexName.toLowerCase())
+    if (fubhxFiltered.length === 0) {
+      fubhxFiltered = fubhxItems.filter(item => 
+        item.keywords.some(keyword => keyword.toLowerCase().includes(activeFubhxName.toLowerCase())) ||
+        item.title.toLowerCase().includes(activeFubhxName.toLowerCase())
       );
     }
     
     return searchQuery 
-      ? cortexFiltered.filter(item => 
+      ? fubhxFiltered.filter(item => 
           item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
           item.keywords.some(keyword => keyword.toLowerCase().includes(searchQuery.toLowerCase())) ||
           item.writer.toLowerCase().includes(searchQuery.toLowerCase())
         )
-      : cortexFiltered;
+      : fubhxFiltered;
   };
   
   const filteredItems = getFilteredItems();
@@ -121,15 +121,15 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
   };
 
   const handleMoveItems = () => {
-    if (!targetCortex) return;
+    if (!targetFubhx) return;
     
-    toast.success(`Moved ${selectedItems.length} items to ${targetCortex}`);
+    toast.success(`Moved ${selectedItems.length} items to ${targetFubhx}`);
     setSelectedItems([]);
     setMoveDialogOpen(false);
-    setTargetCortex('');
+    setTargetFubhx('');
   };
 
-  const cortexOptions = [
+  const fubhxOptions = [
     { id: 'shared-1', name: 'Second Brain' },
     { id: 'shared-2', name: 'OSS' },
     { id: 'shared-3', name: 'Artificial Intelligence' },
@@ -147,7 +147,7 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
         <div className="relative w-80">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
           <Input 
-            placeholder="Search cortexes..." 
+            placeholder="Search fubhx..." 
             className="pl-10"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
@@ -166,7 +166,7 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
           </Button>
           <Button size="sm">
             <Plus size={16} className="mr-2" />
-            New Cortex
+            New Fubhx
           </Button>
         </div>
       </div>
@@ -174,7 +174,7 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
       <div className="flex-1 overflow-auto">
         {filteredItems.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full text-muted-foreground">
-            <p>No cortex items found for this section.</p>
+            <p>No fubhx items found for this section.</p>
           </div>
         ) : (
           <>
@@ -207,15 +207,15 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
       <Dialog open={moveDialogOpen} onOpenChange={setMoveDialogOpen}>
         <DialogContent className="sm:max-w-md">
           <DialogHeader>
-            <DialogTitle>Move to Cortex</DialogTitle>
+            <DialogTitle>Move to Fubhx</DialogTitle>
           </DialogHeader>
           <div className="py-4">
-            <Select onValueChange={setTargetCortex} value={targetCortex}>
+            <Select onValueChange={setTargetFubhx} value={targetFubhx}>
               <SelectTrigger>
-                <SelectValue placeholder="Select target cortex" />
+                <SelectValue placeholder="Select target fubhx" />
               </SelectTrigger>
               <SelectContent>
-                {cortexOptions.map(option => (
+                {fubhxOptions.map(option => (
                   <SelectItem key={option.id} value={option.id}>
                     {option.name}
                   </SelectItem>
@@ -227,7 +227,7 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
             <Button variant="outline" onClick={() => setMoveDialogOpen(false)}>
               Cancel
             </Button>
-            <Button onClick={handleMoveItems} disabled={!targetCortex}>
+            <Button onClick={handleMoveItems} disabled={!targetFubhx}>
               Move Items
             </Button>
           </DialogFooter>
@@ -237,4 +237,4 @@ const CortexTable = ({ viewType = 'table', categoryId = 'private', cortexId = 'o
   );
 };
 
-export default CortexTable;
+export default FubhxTable;

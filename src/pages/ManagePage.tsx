@@ -2,8 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatedTransition } from '@/components/AnimatedTransition';
 import { useAnimateIn } from '@/lib/animations';
-import CortexTable from '@/components/manage/CortexTable';
-import CortexSidebar from '@/components/manage/CortexSidebar';
+import FubhxTable from '@/components/manage/FubhxTable';
+import FubhxSidebar from '@/components/manage/FubhxSidebar';
 import ViewSwitcher from '@/components/manage/ViewSwitcher';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { Input } from '@/components/ui/input';
@@ -15,7 +15,7 @@ import { Toaster } from 'sonner';
 const ManagePage = () => {
   const showContent = useAnimateIn(false, 300);
   const [viewType, setViewType] = useState<'table' | 'grid' | 'list' | 'kanban'>('table');
-  const [libraryTitle, setLibraryTitle] = useState('Cortex Library');
+  const [libraryTitle, setLibraryTitle] = useState('Fubhx Library');
   const [isEditing, setIsEditing] = useState(false);
   const [tempTitle, setTempTitle] = useState('');
   const [dialogOpen, setDialogOpen] = useState(false);
@@ -50,7 +50,7 @@ const ManagePage = () => {
     }
   };
 
-  const handleCortexSelect = (categoryId: string, itemId: string | null) => {
+  const handleFubhxSelect = (categoryId: string, itemId: string | null) => {
     setSelectedCategory(categoryId);
     setSelectedItem(itemId);
   };
@@ -69,8 +69,8 @@ const ManagePage = () => {
       <Toaster position="top-right" />
       <AnimatedTransition show={showContent} animation="slide-up">
         <div className="flex h-[calc(100vh-130px)]">
-          <CortexSidebar 
-            onCortexSelect={handleCortexSelect}
+          <FubhxSidebar 
+            onFubhxSelect={handleFubhxSelect}
             selectedCategoryId={selectedCategory}
             selectedItemId={selectedItem}
           />
@@ -109,10 +109,10 @@ const ManagePage = () => {
                 <ViewSwitcher activeView={viewType} onViewChange={setViewType} />
               </TooltipProvider>
             </div>
-            <CortexTable 
+            <FubhxTable 
               viewType={viewType} 
               categoryId={selectedCategory}
-              cortexId={selectedItem}
+              fubhxId={selectedItem}
             />
           </div>
         </div>

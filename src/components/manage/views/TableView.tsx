@@ -10,11 +10,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { CortexItem, columns } from '../cortex-data';
+import { FubhxItem, columns } from '../fubhx-data';
 import { cn } from '@/lib/utils';
 
 interface TableViewProps {
-  items: CortexItem[];
+  items: FubhxItem[];
   selectedItems?: string[];
   onSelectItem?: (id: string) => void;
 }

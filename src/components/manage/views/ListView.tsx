@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Check, Square } from 'lucide-react';
-import { CortexItem } from '../cortex-data';
+import { FubhxItem } from '../fubhx-data';
 import { cn } from '@/lib/utils';
 
 interface ListViewProps {
-  items: CortexItem[];
+  items: FubhxItem[];
   selectedItems?: string[];
   onSelectItem?: (id: string) => void;
 }

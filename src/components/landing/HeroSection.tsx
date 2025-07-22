@@ -21,12 +21,12 @@ export const HeroSection = ({
       <AnimatedTransition show={showTitle} animation="slide-up" duration={600}>
         {/* Title first */}
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-clip-text text-blue-600 md:text-7xl">
-          Your Personal AI Engine
+          Expert Mobile App Development
         </h1>
         
         {/* Interactive text second */}
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in" key={heroText}>
-          {heroText}
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 animate-fade-in">
+          We create powerful iOS and Android apps that transform your business ideas into reality. From startups to enterprises, we handle all kinds of mobile applications.
         </p>
         
         {/* Diagram third */}
@@ -36,7 +36,7 @@ export const HeroSection = ({
         
         {/* Call to action last */}
         <Button size="lg" onClick={() => setIsModalOpen(true)} className="rounded-full px-8 py-6 text-base font-medium bg-primary hover:bg-primary/90 transition-all duration-300">
-          Join Waitlist
+          Get Free Quote
         </Button>
 
         <WaitlistModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />

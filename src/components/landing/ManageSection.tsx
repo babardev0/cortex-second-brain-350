@@ -10,41 +10,41 @@ export const ManageSection = ({
 }: ManageSectionProps) => {
   const [activeFeature, setActiveFeature] = useState<number | null>(null);
   const features = [{
-    title: "Add Cells",
-    description: "Seamlessly import data (CSV, HTML, AI scraping, or clipping) or create new entries effortlessly."
+    title: "iOS Apps",
+    description: "Native iOS development using Swift and SwiftUI for optimal performance and user experience."
   }, {
-    title: "Plug & Play",
-    description: "Fully customizable with an open-source framework that adapts to your workflow."
+    title: "Android Apps",
+    description: "Native Android development with Kotlin and modern Android frameworks."
   }, {
-    title: "Spatial Thinking",
-    description: "Visualize ideas with brain cells, lists, galleries, tables, maps, or timelines."
+    title: "Cross-Platform",
+    description: "React Native and Flutter apps that work seamlessly across both platforms."
   }, {
-    title: "Contextual",
-    description: "Say goodbye to folders—create sub-brains tailored to specific projects or tasks."
+    title: "UI/UX Design",
+    description: "Beautiful, intuitive user interfaces designed for maximum user engagement."
   }, {
-    title: "Intelligence",
-    description: "AI-powered insights that extract what they mention from every pinned topic."
+    title: "Backend Integration",
+    description: "Robust backend services, APIs, and database integration for your mobile apps."
   }, {
-    title: "Clip",
-    description: "Collect data from any source or device directly into your second brain."
+    title: "E-commerce",
+    description: "Full-featured shopping apps with payment gateway integration and inventory management."
   }, {
-    title: "Agnostic",
-    description: "Clip any type of content with built-in extraction tools."
+    title: "Social Apps",
+    description: "Social networking features, real-time chat, and community building functionality."
   }, {
-    title: "Search",
-    description: "Find what you're looking for with intelligent, precision-focused search capabilities."
+    title: "Enterprise",
+    description: "Custom enterprise mobile solutions for business process automation and productivity."
   }, {
-    title: "Private",
-    description: "Keep all your work secure in a private, controlled space."
+    title: "Gaming",
+    description: "Mobile game development with engaging gameplay and monetization strategies."
   }, {
-    title: "Recognition",
-    description: "Identify and extract text from images, videos, and more."
+    title: "AR/VR",
+    description: "Augmented and virtual reality mobile experiences using latest technologies."
   }, {
-    title: "Share",
-    description: "Share thoughts and ideas to collaborate seamlessly."
+    title: "IoT Apps",
+    description: "Internet of Things integration for smart device control and monitoring."
   }, {
-    title: "D/L mode",
-    description: "Toggle between dark and simplified interface with custom color modes for focus."
+    title: "Maintenance",
+    description: "Ongoing app maintenance, updates, and performance optimization services."
   }];
   const handleFeatureClick = (index: number) => {
     setActiveFeature(index === activeFeature ? null : index);
@@ -52,8 +52,8 @@ export const ManageSection = ({
   return <AnimatedTransition show={show} animation="slide-up" duration={600}>
       <div className="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-2 mb-12">
-          <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Manage</h2>
-          <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">The first and only extension for your real mind.</p>
+          <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Develop</h2>
+          <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">Comprehensive mobile app development services for every platform.</p>
         </div>
 
         <FeatureIllustration featureIndex={activeFeature} className="transition-all duration-500" />

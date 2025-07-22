@@ -3,17 +3,17 @@ import { UserCasesData, Book } from './UseCasesTypes';
 
 export const userCasesData: UserCasesData = {
   Marketers: {
-    title: 'Save and find quotes & highlights',
-    subtitle: 'that inspire you.',
-    description: "nature scene now feels like a stimulation. We are overloaded with digital imagery. The internet has delivered the world to us on a silver platter from the glacial landscapes of Greenland to the cracks lining the Sahara desert. We've seen the deep ocean, microscopic bacteria, the insides of our own bodies.",
-    quote: "True change is within.",
+    title: 'Marketing & E-commerce',
+    subtitle: 'apps that convert.',
+    description: "Build powerful marketing automation apps, customer engagement platforms, and e-commerce solutions that drive sales and grow your business.",
+    quote: "Convert visitors into customers.",
     background: 'bg-[#ff4d3c]',
     textColor: 'text-white',
-    ctaText: 'SAVE TO MY MIND'
+    ctaText: 'GET QUOTE'
   },
   Designers: {
-    title: 'Create instant, boundless',
-    subtitle: 'visual moodboards.',
+    title: 'Beautiful UI/UX',
+    subtitle: 'that users love.',
     description: '',
     quote: '',
     background: 'bg-[#d8ede7]',
@@ -22,18 +22,18 @@ export const userCasesData: UserCasesData = {
     showImageGrid: true
   },
   Writers: {
-    title: 'Write without',
-    subtitle: 'distractions.',
+    title: 'Content & Media',
+    subtitle: 'publishing apps.',
     description: '',
     quote: '',
     background: 'bg-[#f7c2d2]',
     textColor: 'text-white',
-    ctaText: 'ADD NEW NOTE',
+    ctaText: 'START PROJECT',
     showNotepad: true
   },
   Researchers: {
-    title: 'Collect all your research &',
-    subtitle: 'references in one place.',
+    title: 'Enterprise & Business',
+    subtitle: 'productivity solutions.',
     description: '',
     quote: '',
     background: 'bg-[#e8f4f8]',
@@ -42,8 +42,8 @@ export const userCasesData: UserCasesData = {
     showBrain: true
   },
   Developers: {
-    title: 'Your private',
-    subtitle: 'resource & reference hub.',
+    title: 'Custom Development',
+    subtitle: 'for any requirement.',
     description: '',
     quote: '',
     background: 'bg-[#1a1f2c]',
@@ -52,8 +52,8 @@ export const userCasesData: UserCasesData = {
     showDevTools: true
   },
   Everyone: {
-    title: 'A place for everything',
-    subtitle: 'you want to remember.',
+    title: 'All Types of Apps',
+    subtitle: 'we can handle.',
     description: '',
     quote: '',
     background: 'bg-[#e8ecf0]',

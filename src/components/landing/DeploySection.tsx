@@ -8,27 +8,27 @@ export const DeploySection = ({
 }: DeploySectionProps) => {
   const deployFeatures = [{
     icon: <Activity size={32} className="text-primary" />,
-    title: "Seamless",
-    description: "Publish your work effortlessly across various platforms and devices."
+    title: "App Store",
+    description: "Complete App Store submission process including compliance and optimization."
   }, {
     icon: <TrendingUp size={32} className="text-primary" />,
-    title: "Insights",
-    description: "Gain insights with built-in analytics to track impact and engagement."
+    title: "Analytics",
+    description: "Comprehensive app analytics and user behavior tracking integration."
   }, {
     icon: <Layout size={32} className="text-primary" />,
-    title: "Optimize",
-    description: "Leverage AI to identify areas for improvement and refine your outputs."
+    title: "Testing",
+    description: "Thorough QA testing across all devices and operating system versions."
   }, {
     icon: <Maximize size={32} className="text-primary" />,
-    title: "Scale",
-    description: "Adapt and grow your AI solutions as your needs evolve."
+    title: "Support",
+    description: "Post-launch support, updates, and performance optimization services."
   }];
   return <AnimatedTransition show={show} animation="slide-up" duration={600}>
       <div className="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-2 mb-12">
           <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Deploy</h2>
           <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">
-            Take your AI-driven work to the next level.
+            Launch your mobile app on App Store and Google Play with confidence.
           </p>
         </div>
 

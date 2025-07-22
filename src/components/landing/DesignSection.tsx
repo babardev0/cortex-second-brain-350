@@ -9,17 +9,17 @@ export const DesignSection = ({
   show
 }: DesignSectionProps) => {
   const templateCategories = [{
-    title: "Creative Projects",
-    templates: ["Course Creator", "Book Notes", "Interactive Presentation", "Brainstorming Session", "Video Script", "Podcast Planning", "Design Portfolio", "Creative Writing"]
+    title: "E-commerce Apps",
+    templates: ["Shopping Cart", "Product Catalog", "Payment Gateway", "Order Tracking", "User Reviews", "Wishlist", "Search Filters", "Checkout Flow"]
   }, {
-    title: "Business Tools",
-    templates: ["Marketing Campaign", "Business Proposal", "Contract Template", "Product Launch", "Sales Dashboard", "Client Management", "Meeting Notes", "Business Plan"]
+    title: "Social Media Apps",
+    templates: ["User Profiles", "News Feed", "Chat Interface", "Story Feature", "Live Streaming", "Photo Sharing", "Social Login", "Notification System"]
   }, {
-    title: "Research & Strategy",
-    templates: ["Research Paper", "Problem Solving Framework", "Content Calendar", "Social Media Strategy", "Academic Notes", "Literature Review", "Competitor Analysis", "Market Research"]
+    title: "Business Apps",
+    templates: ["Dashboard Analytics", "CRM Interface", "Inventory Management", "Employee Portal", "Task Management", "Time Tracking", "Report Generation", "Meeting Scheduler"]
   }, {
-    title: "Personal Growth",
-    templates: ["Habit Tracker", "Goal Setting", "Learning Journal", "Reading List", "Travel Planner", "Fitness Tracker", "Productivity System", "Reflection Journal"]
+    title: "Entertainment Apps",
+    templates: ["Video Player", "Music Streaming", "Game Interface", "AR Filters", "Live Chat", "Content Feed", "Subscription Plans", "Media Gallery"]
   }];
   const [currentTemplates, setCurrentTemplates] = useState<string[]>([]);
   const [category, setCategory] = useState(0);
@@ -51,7 +51,7 @@ export const DesignSection = ({
       <div className="py-16 md:py-24">
         <div className="flex flex-col items-center text-center gap-2 mb-12">
           <h2 className="text-4xl font-bold text-blue-600 md:text-8xl">Design</h2>
-          <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">Choose from over 200+ ready-to-use templates tailored to your needs.</p>
+          <p className="text-foreground max-w-3xl text-xl md:text-2xl mt-2">Professional UI/UX design services for exceptional mobile experiences.</p>
         </div>
 
         <div className="flex justify-center space-x-2 mb-12">

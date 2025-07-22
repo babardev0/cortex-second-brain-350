@@ -224,14 +224,14 @@ export const Navbar = () => {
             ) : (
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Button
+                  {/* <Button
                     variant="ghost"
                     className="flex items-center gap-2 px-4 py-3 rounded-lg hover:bg-primary hover:text-primary-foreground"
                     onClick={handleOpenAuthModal}
                   >
                     <LogIn size={20} />
                     {active === 'login' && <span className="font-medium">Login</span>}
-                  </Button>
+                  </Button> */}
                 </TooltipTrigger>
                 <TooltipContent>
                   <p>Login</p>
